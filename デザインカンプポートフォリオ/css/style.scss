@@ -1,0 +1,555 @@
+@charset "UTF-8";
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+// -------------------html------------------------------------------
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+  font-size: 1.6rem;
+  color: #333333;
+}
+img{
+  width: 100%;
+  vertical-align: bottom;
+}
+li{
+  list-style: none;
+}
+img,svg{
+  width: 100%;
+  vertical-align: bottom;
+}
+.wrapper{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+a{
+  display: inline-block;
+  text-decoration: none;
+  &:hover{
+    opacity: .7;
+    transition: .3s;
+  }
+}
+
+.flex-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body.noscroll{
+  overflow: hidden;
+}
+.btn{
+  width: 160px;
+  line-height: 3.6;
+  background-color: #000000;
+  text-align: center;
+  margin-top: 30px;
+  a{
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block;
+  }
+}
+.sec-ttl{
+  font-size: 3.2rem;
+}
+.line-height{
+  line-height: 2;
+}
+
+
+
+
+
+// -------------------header------------------------------------------
+.header{
+  .site-logo{
+    width: 260px;
+    position: fixed;
+    top: 30px;
+    left: 4vw;
+    z-index: 1;
+  }
+  &-nav{
+    position: fixed;
+    font-weight: bold;
+    font-size: 2rem;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 36.1vw;
+    text-align: center;
+    padding-top: 120px;
+    background-color:rgba(34,34,34,.95);
+    z-index: 2;
+    // ここからjqueryでアニメーション
+    transform: translateX(100%);
+    // opacity: 0;
+    transition: transform .3s,opacity .3s;
+    ul{
+      li{
+        margin-bottom: 30px;
+        &:first-child{
+          margin-bottom: 40px;
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+        a{
+          color: #fff;
+        }
+      }
+    }
+  }
+  .hamburger{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    cursor: pointer;
+    top: 36px;
+    right: 4vw;
+    z-index: 3;
+    .bars{
+      position: relative;
+      .bar{
+        position: absolute;
+        right: 5px;
+        display: block;
+        background-color: #fff;
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+      }
+      .bar-top{
+        // transform: translateY(-4px);
+        bottom: 3px;
+        transition: transform .3s;
+      }
+      .bar-mdl{
+        top:-1px;
+        transition: transform .3s;
+      }
+      .bar-btm{
+        top: 3px;
+        transition: transform .3s;
+      }
+    }
+    .menu{
+      display: block;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-left: 5px;
+      color: #fff;
+    }
+  }
+  .burger-mask{
+    width: 100%;
+    height: 100vh;
+    background-color:rgba(0,0,0,.5) ;
+    display: none;
+    z-index: 1;
+  }
+}
+
+
+//ハンバーガーボタンが開いた時
+
+.bar-top.cross{
+  transform: translateY(4px)rotate(20deg);
+  transition: .3s;
+}
+.bar-mdl.cross{
+  opacity: 0;
+  transition: .3s;
+}
+.bar-btm.cross{
+  transform: translateY(-4px)rotate(-20deg);
+  transition: .3s;
+}
+
+/* ハンバーガーメニューが開いたとき */
+
+body.noscroll{
+  overflow: hidden;
+}
+
+.header-nav.open{
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform .3s,opacity .3s;
+}
+
+
+
+main{
+  .bg-gry{
+    height: 100vh;
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #222222;
+      z-index: -1;
+    }
+    .kv-img{
+      width: 76.5%;
+      height: 86.4%;
+      background: url(../img/kv-img.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      .kv-box{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+        color: #fff;
+        font-weight: bold;
+        .ja{
+          font-size: 2rem;
+        }
+        .en{
+          font-size: 2rem;
+          margin-top: 7px;
+        }
+        .kv-copy{
+          font-size: 7.2rem;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .about{
+    padding-top: 120px;
+    position: relative;
+    .wrapper{
+      padding: 0;
+    }
+    &-content{
+      background: url(../img/about-img.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 110px 50px;
+      &-item{
+        max-width: 590px;
+        padding: 50px 30px;
+        background-color:  rgba(255,255,255,.95);
+        box-sizing: border-box;
+        h3{
+          font-size: 3.2rem;
+        }
+        p{
+          line-height: 2;
+          margin-top: 30px;
+        }
+      }
+    }
+    &::after{
+      content: "";
+      width: 100%;
+      height: 100px;
+      display: block;
+      background-color: #F0F0F0;
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+
+
+  .bg-gray{
+    padding: 80px 0 60px;
+    background-color: #F0F0F0;
+    .item{
+      width: 47%;
+      h3{
+        font-size: 3.2rem;
+      }
+      img{
+        margin-top: 30px;
+      }
+      p{
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .topics{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &-content{
+      ul{
+        max-width: 700px;
+        margin-left: auto;
+        li{
+          margin-top: 32px;
+          border-bottom: solid 1px #DDDDDD;
+          a{
+            time{
+              font-size: 1rem;
+              color: #CECECE;
+            }
+            p{
+              color: #333333;
+              padding-bottom: 12px;
+              margin-top: 13px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .btn{
+        margin-left: auto;
+      }
+    }
+  }
+
+  .contact{
+    background-color:#F2F2F2;
+    padding: 60px 0 120px;
+    .flex-box{
+      flex-direction:row-reverse;
+      img{
+        max-width: 580px;
+      }
+      .contact-content{
+        max-width: 440px;
+        p{
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+footer{
+  background-color: #525252;
+  padding: 20px 0;
+  .copy-right{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px){
+
+  body{
+    font-size: 1.4rem;
+  }
+  .wrapper{
+    padding:0 15px;
+  }
+  .sec-ttl{
+    font-size: 2.8rem;
+  }
+
+
+  .header{
+    .site-logo{
+      top: 19px;
+      width: 189px;
+    }
+    &-nav{
+      width: 67.7vw;
+    }
+    .hamburger{
+      top: 19px;
+    }
+  }
+
+  main{
+    .bg-gry{
+      .kv-img{
+        .kv-box{
+          transform: translate(25%, -50%);
+          .ja{
+            font-size: 1.6rem;
+          }
+          .en{
+            font-size: 1.6rem;
+          }
+          .kv-copy{
+            font-size: 5.6rem;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+    .about{
+      &-content{
+        padding: 50px  4vw;
+      }
+    }
+  
+    .bg-gray{
+      padding: 40px 0;
+      .flex-box{
+        flex-direction: column;
+        align-items: flex-start;
+        .item{
+          width: 520px;
+          max-width: 100%;
+        }
+        .culture{
+          margin-top: 80px;
+        }
+      }
+    }
+  
+    .topics{
+      padding-top: 40px;
+      padding-bottom: 40px;
+      &-content{
+        ul{
+          li{
+            a{
+              p{
+                font-size: 1.2rem;
+                line-height: 1.6;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .contact{
+      padding: 40px 0;
+      .flex-box{
+        flex-direction: column;
+        .contact-content{
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
