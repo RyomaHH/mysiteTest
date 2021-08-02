@@ -1,0 +1,594 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+input,textarea{
+  resize: none;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+// -------------------html------------------------------------------
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+  font-size: 1.6rem;
+  color: #333333;
+}
+img{
+  width: 100%;
+  vertical-align: bottom;
+}
+li{
+  list-style: none;
+}
+.wrapper{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+a{
+  display: inline-block;
+  text-decoration: none;
+  &:hover{
+    opacity: .7;
+    transition: .3s;
+  }
+}
+
+.flex-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body.noscroll{
+  overflow: hidden;
+}
+.wrapper{
+  max-width: 700px;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+.btn{
+  width: 160px;
+  line-height: 3.6;
+  background-color: #000000;
+  text-align: center;
+  margin-top: 30px;
+  a{
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block;
+  }
+}
+.sec-ttl{
+  font-size: 3.2rem;
+}
+.line-height{
+  line-height: 2;
+}
+.line-height15{
+  line-height: 1.5;
+}
+input,textarea{
+  resize: none;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+.form-item-ttl{
+  span{
+    display: inline-block;
+    margin-left: 10px;
+    color: #fff;
+    background-color: #333333;
+    font-size: 1.2rem;
+    padding: 2px 5px;
+    vertical-align: 1px;
+  }
+}
+
+
+// -------------------header------------------------------------------
+.header{
+  .site-logo{
+    width: 260px;
+    position: fixed;
+    top: 30px;
+    left: 4vw;
+    z-index: 1;
+  }
+  &-nav{
+    position: fixed;
+    font-weight: bold;
+    font-size: 2rem;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 36.1vw;
+    text-align: center;
+    padding-top: 120px;
+    background-color:rgba(34,34,34,.95);
+    z-index: 2;
+    // ここからjqueryでアニメーション
+    transform: translateX(100%);
+    // opacity: 0;
+    transition: transform .3s,opacity .3s;
+    ul{
+      li{
+        margin-bottom: 30px;
+        &:first-child{
+          margin-bottom: 40px;
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+        a{
+          color: #fff;
+        }
+      }
+    }
+  }
+  .hamburger{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    cursor: pointer;
+    top: 36px;
+    right: 4vw;
+    z-index: 5;
+    .bars{
+      position: relative;
+      .bar{
+        position: absolute;
+        right: 5px;
+        display: block;
+        background-color: #fff;
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+      }
+      .bar-top{
+        // transform: translateY(-4px);
+        bottom: 3px;
+        transition: transform .3s;
+      }
+      .bar-mdl{
+        top:-1px;
+        transition: transform .3s;
+      }
+      .bar-btm{
+        top: 3px;
+        transition: transform .3s;
+      }
+    }
+    .menu{
+      display: block;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-left: 5px;
+      color: #fff;
+    }
+  }
+  .burger-mask{
+    width: 100%;
+    height: 100vh;
+    background-color:rgba(0,0,0,.5) ;
+    display: none;
+    z-index: 1;
+
+  }
+}
+
+
+//ハンバーガーボタンが開いた時
+
+.bar-top.cross{
+  transform: translateY(4px)rotate(20deg);
+  transition: .3s;
+}
+.bar-mdl.cross{
+  opacity: 0;
+  transition: .3s;
+}
+.bar-btm.cross{
+  transform: translateY(-4px)rotate(-20deg);
+  transition: .3s;
+}
+
+/* ハンバーガーメニューが開いたとき */
+
+body.noscroll{
+  overflow: hidden;
+}
+.header-nav.open{
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform .3s,opacity .3s;
+}
+
+
+main{
+  .bg-gry{
+    height: 60vh;
+    min-height: 450px;
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      display: block;
+      width: 50%;
+      height: 60vh;
+      background-color: #222222;
+      top: 0;
+      right: 0;
+      z-index: -2;
+      min-height: 450px;
+    }
+    .bg-img{
+      width: 76.3%;
+      height: 83%;
+      background: url(../img/heading-img_contact.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
+      position: relative;
+      &-content{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(40%,-50%);
+        color: #fff;
+        .about-ttl{
+          font-size: 7.2rem;
+        }
+        p{
+          font-size: 2rem;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  .contact-main{
+    padding: 120px 0;
+    form{
+      margin-top: 55px;
+      .required-list{
+        display: flex;
+        margin-top: 23px;
+        &-item{
+          margin-right: 50px;
+          .radio-btn{
+            height: 20px;
+            width: 20px;
+            border: solid 1px #333;
+            border-radius: 50%;
+            vertical-align: -3px;
+            cursor: pointer;
+            &:checked{
+              background-color: #333;
+              border: 4px solid #fff;
+              box-shadow: 0 0 0 1px #333;
+            }
+          }
+        }
+      }
+      .form-list-item{
+        margin-top: 45px;
+        .text-box{
+          border: solid 1px #333;
+          margin-top: 10px;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+        .textarea{
+          border: solid 1px #333;
+          margin-top: 10px;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+        .privacy-ttl{
+          font-weight: bold;
+        }
+        .privacy{
+          height: 230px;
+          margin-top: 10px;
+          border: solid 1px #333;
+          padding: 10px;
+          overflow: scroll;
+          margin-bottom: 40px;
+        }
+      }
+
+      .confirm{
+        text-align: center;
+        .checkbox{
+          width: 20px;
+          height: 20px;
+          border: solid 1px #333;
+          vertical-align: -7.5px;
+          margin-right: 10px;
+          &:checked{
+            background-color: #333;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 1px #333;
+          }
+        }
+      }
+
+      .submit{
+        .submit-btn{
+          color: #fff;
+          background-color: #000;
+          width: 160px;
+          line-height: 36px;
+          font-size: 1.2rem;
+          display: block;
+          text-align: center;
+          font-weight: bold;
+          margin: 40px auto 0;
+          cursor: pointer;
+          &:hover{
+            opacity:0.7;
+            transition: .3s;
+          }
+        }
+      }
+
+    }
+  }
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+  background-color: #525252;
+  padding: 20px 0;
+  .copy-right{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px){
+
+  body{
+    font-size: 1.4rem;
+  }
+  .wrapper{
+    padding:0 15px;
+  }
+  .sec-ttl{
+    font-size: 2.8rem;
+  }
+
+
+  .header{
+    .site-logo{
+      top: 19px;
+      width: 189px;
+    }
+    &-nav{
+      width: 67.7vw;
+    }
+    .hamburger{
+      top: 19px;
+    }
+  }
+
+  main{
+    .bg-gry
+    .bg-img{
+      &-content{
+        transform: translate(20%,-50%);
+        .about-ttl{
+          font-size: 5.2rem;
+        }
+        p{
+          font-size: 1.6rem;
+          margin-top: 10px;
+        }
+      }
+    }
+
+ 
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+@media screen and (max-width: 480px){
+  .line-height15{
+    font-size: 1.4rem;
+    line-height: 1.7;
+  }
+
+  main{
+    .contact-main{
+      padding: 80px 0;
+      form{
+        .required-list{
+          display: flex;
+          flex-direction: column;
+          &-item{
+            margin-top: 15px;
+            &:first-child{
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+
+
+
+  }
+
+
+
+
+}
